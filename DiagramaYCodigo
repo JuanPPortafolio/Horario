@@ -1,0 +1,236 @@
+create database Horario2;
+ use Horario2
+
+ create table dias_semana(
+ id_dia_semana int Primary Key identity(1,1),
+ descripcion varchar(15) not null,
+ )
+
+ create table Materia(
+ id_materia varchar(10) Primary Key,
+ Nombre_Materia varchar(70) not null
+ )
+
+ insert into Materia(id_materia,Nombre_Materia)values('LEP365','Lenguaje de Programación II')
+ insert into Materia(id_materia,Nombre_Materia)values('MAT166','Matemática I')
+ insert into Materia(id_materia,Nombre_Materia)values('PPE340','Paradigma de Programación I')
+ insert into Materia(id_materia,Nombre_Materia)values('BAD343','Base de Datos')
+ insert into Materia(id_materia,Nombre_Materia)values('ADS343','Analisis y Desarrollo de Sistemas I')
+ insert into Materia(id_materia,Nombre_Materia)values('ARC332','Arquitectura del computador')
+ select * from Materia
+
+ create table Aula(
+ id_aula varchar(12) Primary Key,
+ estatus_aula varchar(2) default 'AC'
+ )
+ insert into Aula(id_aula)values('120')
+ insert into Aula(id_aula)values('105')
+
+ create table Mtro_horario(
+ id_horario int Primary Key identity (1,1),
+ Hora varchar(15) not null,
+ Turno varchar(1) not null,
+ id_dia_semana int Foreign Key References dias_semana (id_dia_semana)
+ )
+
+ insert into dias_semana(descripcion)values('Lunes')
+ insert into dias_semana(descripcion)values('Martes')
+ insert into dias_semana(descripcion)values('Miercoles')
+ insert into dias_semana(descripcion)values('Jueves')
+ insert into dias_semana(descripcion)values('Viernes')
+ insert into dias_semana(descripcion)values('Sabado')
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('7:40-8:20','M','1')
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('8:20-9:00','M','1')
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('9:00-9:40','M','1')
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('9:45-10:25','M','1')
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('10:25-11:05','M','1')
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('11:05-11:45','M','1')
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('11:45-12:05','M','1')
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('12:25-01:05','M','1')
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('01:05-01:45','M','1')
+
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('7:40-8:20','M','2')
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('8:20-9:00','M','2')
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('9:00-9:40','M','2')
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('9:45-10:25','M','2')
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('10:25-11:05','M','2')
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('11:05-11:45','M','2')
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('11:45-12:05','M','2')
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('12:25-01:05','M','2')
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('01:05-01:45','M','2')
+
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('7:40-8:20','M','3')
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('8:20-9:00','M','3')
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('9:00-9:40','M','3')
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('9:45-10:25','M','3')
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('10:25-11:05','M','3')
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('11:05-11:45','M','3')
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('11:45-12:05','M','3')
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('12:25-01:05','M','3')
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('01:05-01:45','M','3')
+
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('7:40-8:20','M','4')
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('8:20-9:00','M','4')
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('9:00-9:40','M','4')
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('9:45-10:25','M','4')
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('10:25-11:05','M','4')
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('11:05-11:45','M','4')
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('11:45-12:05','M','4')
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('12:25-01:05','M','4')
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('01:05-01:45','M','4')
+
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('7:40-8:20','M','5')
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('8:20-9:00','M','5')
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('9:00-9:40','M','5')
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('9:45-10:25','M','5')
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('10:25-11:05','M','5')
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('11:05-11:45','M','5')
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('11:45-12:05','M','5')
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('12:25-01:05','M','5')
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('01:05-01:45','M','5')
+
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('7:40-8:20','M','6')
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('8:20-9:00','M','6')
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('9:00-9:40','M','6')
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('9:45-10:25','M','6')
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('10:25-11:05','M','6')
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('11:05-11:45','M','6')
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('11:45-12:05','M','6')
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('12:25-01:05','M','6')
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('01:05-01:45','M','6')
+
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('01:45-02:25','T','1')
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('02:25-03:05','T','1')
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('03:10-03:45','T','1')
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('03:50-04:30','T','1')
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('04:30-05:10','T','1')
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('05:10-05:50','T','1')
+
+
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('01:45-02:25','T','2')
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('02:25-03:05','T','2')
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('03:10-03:45','T','2')
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('03:50-04:30','T','2')
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('04:30-05:10','T','2')
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('05:10-05:50','T','2')
+
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('01:45-02:25','T','3')
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('02:25-03:05','T','3')
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('03:10-03:45','T','3')
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('03:50-04:30','T','3')
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('04:30-05:10','T','3')
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('05:10-05:50','T','3')
+
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('01:45-02:25','T','4')
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('02:25-03:05','T','4')
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('03:10-03:45','T','4')
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('03:50-04:30','T','4')
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('04:30-05:10','T','4')
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('05:10-05:50','T','4')
+
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('01:45-02:25','T','5')
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('02:25-03:05','T','5')
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('03:10-03:45','T','5')
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('03:50-04:30','T','5')
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('04:30-05:10','T','5')
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('05:10-05:50','T','5')
+
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('01:45-02:25','T','6')
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('02:25-03:05','T','6')
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('03:10-03:45','T','6')
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('03:50-04:30','T','6')
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('04:30-05:10','T','6')
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('05:10-05:50','T','6')
+
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('05:50-06:30','N','1')
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('06:30-07:10','N','1')
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('07:10-07:50','N','1')
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('07:50-08:30','N','1')
+
+  insert into Mtro_horario(Hora,Turno,id_dia_semana)values('05:50-06:30','N','1')
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('06:30-07:10','N','1')
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('07:10-07:50','N','1')
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('07:50-08:30','N','1')
+
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('05:50-06:30','N','2')
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('06:30-07:10','N','2')
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('07:10-07:50','N','2')
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('07:50-08:30','N','2')
+
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('05:50-06:30','N','3')
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('06:30-07:10','N','3')
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('07:10-07:50','N','3')
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('07:50-08:30','N','3')
+
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('05:50-06:30','N','4')
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('06:30-07:10','N','4')
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('07:10-07:50','N','4')
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('07:50-08:30','N','4')
+
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('05:50-06:30','N','5')
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('06:30-07:10','N','5')
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('07:10-07:50','N','5')
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('07:50-08:30','N','5')
+
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('05:50-06:30','N','6')
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('06:30-07:10','N','6')
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('07:10-07:50','N','6')
+ insert into Mtro_horario(Hora,Turno,id_dia_semana)values('07:50-08:30','N','6')
+
+ create table Horario_completo(
+ id_Horario int Foreign Key references Mtro_Horario(id_Horario),
+ id_Seccion varchar(8) not null,
+ id_materia varchar(10) Foreign Key references Materia(id_materia),
+ id_aula varchar(12) Foreign Key references Aula(id_aula),
+ id_dia_semana int Foreign Key references dias_semana(id_dia_semana)
+ )
+
+ select * from Horario_completo
+
+ insert into Horario_completo(id_Horario,id_dia_semana,id_Seccion,id_materia,id_aula)values('4','1','1301','LEP365','120')
+ insert into Horario_completo(id_Horario,id_dia_semana,id_Seccion,id_materia,id_aula)values('91','1','1301','MAT166','105')
+
+ insert into Horario_completo(id_Horario,id_dia_semana,id_Seccion,id_materia,id_aula)values('10','2','1301','PPE340','120')
+ insert into Horario_completo(id_Horario,id_dia_semana,id_Seccion,id_materia,id_aula)values('11','2','1301','PPE340','120')
+ insert into Horario_completo(id_Horario,id_dia_semana,id_Seccion,id_materia,id_aula)values('12','2','1301','PPE340','120')
+ insert into Horario_completo(id_Horario,id_dia_semana,id_Seccion,id_materia,id_aula)values('13','2','1301','PPE340','120')
+
+ insert into Horario_completo(id_Horario,id_dia_semana,id_Seccion,id_materia,id_aula)values('19','3','1301','BAD343','120')
+ insert into Horario_completo(id_Horario,id_dia_semana,id_Seccion,id_materia,id_aula)values('20','3','1301','BAD343','120')
+ insert into Horario_completo(id_Horario,id_dia_semana,id_Seccion,id_materia,id_aula)values('21','3','1301','BAD343','120')
+ insert into Horario_completo(id_Horario,id_dia_semana,id_Seccion,id_materia,id_aula)values('22','3','1301','BAD343','120')
+ insert into Horario_completo(id_Horario,id_dia_semana,id_Seccion,id_materia,id_aula)values('23','3','1301','ADS343','120')
+ insert into Horario_completo(id_Horario,id_dia_semana,id_Seccion,id_materia,id_aula)values('24','3','1301','ADS343','120')
+ insert into Horario_completo(id_Horario,id_dia_semana,id_Seccion,id_materia,id_aula)values('25','3','1301','ADS343','120')
+ insert into Horario_completo(id_Horario,id_dia_semana,id_Seccion,id_materia,id_aula)values('26','3','1301','ADS343','120')
+
+ insert into Horario_completo(id_Horario,id_dia_semana,id_Seccion,id_materia,id_aula)values('28','4','1301','ARC332','120')
+ insert into Horario_completo(id_Horario,id_dia_semana,id_Seccion,id_materia,id_aula)values('29','4','1301','ARC332','120')
+ insert into Horario_completo(id_Horario,id_dia_semana,id_Seccion,id_materia,id_aula)values('30','4','1301','ARC332','120')
+
+ insert into Horario_completo(id_Horario,id_dia_semana,id_Seccion,id_materia,id_aula)values('37','5','1301','LEP365','120')
+ insert into Horario_completo(id_Horario,id_dia_semana,id_Seccion,id_materia,id_aula)values('38','5','1301','LEP365','120')
+ insert into Horario_completo(id_Horario,id_dia_semana,id_Seccion,id_materia,id_aula)values('39','5','1301','LEP365','120')
+
+ insert into Horario_completo(id_Horario,id_dia_semana,id_Seccion,id_materia,id_aula)values('46','6','1301','MAT166','120')
+ insert into Horario_completo(id_Horario,id_dia_semana,id_Seccion,id_materia,id_aula)values('47','6','1301','MAT166','120')
+ insert into Horario_completo(id_Horario,id_dia_semana,id_Seccion,id_materia,id_aula)values('48','6','1301','MAT166','120')
+ insert into Horario_completo(id_Horario,id_dia_semana,id_Seccion,id_materia,id_aula)values('49','6','1301','MAT166','120')
+
+
+ select A.id_Seccion,A.id_materia,C.Nombre_Materia,A.id_aula, B.Hora, B.Turno, E.descripcion
+ from Horario_completo A,Mtro_horario B, Materia C, dias_semana E
+ where A.id_Horario=B.id_horario and A.id_dia_semana=E.id_dia_semana and A.id_materia=C.id_materia
+
+ drop table Horario_completo
+
+
+ select a.id_horario,a.Hora,a.Turno,d.descripcion
+ from Mtro_horario A, dias_semana D
+ where a.id_dia_semana=D.id_dia_semana
+
+ select * from Materia
+
+ select * from Mtro_horario
+ select * from dias_semana
+ drop table Mtro_horario
